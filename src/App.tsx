@@ -1,7 +1,14 @@
+import { useEffect } from "react"
 import Navbar from "./components/Navbar"
 import PrimaryButton from "./components/PrimaryButton"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
+  useEffect(() => {
+    AOS.init()
+  }, [])
+
   const review = [
     {
       message: "Roll Ease has been a game-changer for my daily commute! The Argo type is perfect for my short trips around town, and I love that I only pay for the minutes I use. Highly recommended!",
@@ -30,37 +37,41 @@ function App() {
     <div className="h-[2000px]">
       <Navbar />
 
-      <div className="w-full h-[600px]">
+      <div className="w-full h-[600px]" id="start">
         <img src="/assets/images/scooters.png" alt="image" className="w-full h-[600px] absolute z-0" />
 
         <div className="w-full h-[600px] absolute z-10 bg-[#222222] opacity-60"></div>
 
         <div className="w-full h-[600px] absolute z-20 flex flex-col justify-center items-start text-white pl-12">
-          <span className="flex">
-            <p className="text-[#768EAA] text-xl">ROLL</p>
-            <p className=" text-xl">-</p>
-            <p className="text-[#A2C90C] text-xl">EASE</p>
-          </span>
+          <div data-aos="fade-right" data-aos-duration="1500">
+            <span className="flex">
+              <p className="text-[#768EAA] text-xl">ROLL</p>
+              <p className=" text-xl">-</p>
+              <p className="text-[#A2C90C] text-xl">EASE</p>
+            </span>
 
-          <span className="flex flex-wrap text-7xl font-bold w-[590px]">
-            <p>DISCOVER</p>
-            <div className="flex">
-              <p>EVERY</p>
-              <p className="text-[#A2C90C] ml-6">CORNERS</p>
-              <p>.</p>
-            </div>
-          </span>
+            <span className="flex flex-wrap text-7xl font-bold w-[590px]">
+              <p>DISCOVER</p>
+              <div className="flex">
+                <p>EVERY</p>
+                <p className="text-[#A2C90C] ml-6">CORNERS</p>
+                <p>.</p>
+              </div>
+            </span>
 
-          <p className="mt-2 mb-5">Electric Vehicle Rentals for Seamless Explorations.</p>
+            <p className="mt-2 mb-5">Electric Vehicle Rentals for Seamless Explorations.</p>
+          </div>
 
-          <PrimaryButton title="Start Riding" />
+          <div data-aos="fade-up" data-aos-duration="1500">
+            <PrimaryButton title="Start Riding" />
+          </div>
         </div>
       </div>
 
-      <div className="h-10" id="about-us"></div>
+      <div className="h-20" id="about-us"></div>
 
       <div className="w-full h-[500px] p-12 flex justify-between">
-        <div className="w-[60%]" >
+        <div className="w-[60%]" data-aos="fade-right" data-aos-duration="1500">
           <h1 className="text-4xl text-[#A2C90C] font-bold">About Us</h1>
 
           <div className="mt-4 mb-6">
@@ -77,26 +88,26 @@ function App() {
           <PrimaryButton title="Start Riding" />
         </div>
 
-        <img src="/assets/images/about-us.png" alt="image" className="w-[400px] h-[400px]" />
+        <img src="/assets/images/about-us.png" alt="image" className="w-[400px] h-[400px]" data-aos="fade-left" data-aos-duration="1500" />
       </div>
 
       <div className="flex justify-evenly">
-        <div className="w-[150px] flex flex-col items-center gap-y-1">
+        <div className="w-[150px] flex flex-col items-center gap-y-1" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
           <img src="/assets/icons/electric-scooter-icon.png" alt="" className="w-[64px]" />
           <p className="text-center text-xl font-semibold">Effortless Mobility</p>
         </div>
 
-        <div className="w-[150px] flex flex-col items-center gap-y-1">
+        <div className="w-[150px] flex flex-col items-center gap-y-1" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
           <img src="/assets/icons/booking-icon.png" alt="" className="w-[64px]" />
           <p className="text-center text-xl font-semibold">Convenience at Your Fingertips</p>
         </div>
 
-        <div className="w-[150px] flex flex-col items-center gap-y-1">
+        <div className="w-[150px] flex flex-col items-center gap-y-1" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="150">
           <img src="/assets/icons/near-me-icon.png" alt="" className="w-[64px]" />
           <p className="text-center text-xl font-semibold">Return at Nearest Station</p>
         </div>
 
-        <div className="w-[150px] flex flex-col items-center gap-y-1">
+        <div className="w-[150px] flex flex-col items-center gap-y-1" data-aos="fade-up" data-aos-duration="2500" data-aos-delay="200">
           <img src="/assets/icons/quality-icon.png" alt="" className="w-[64px]" />
           <p className="text-center text-xl font-semibold">Enhanced Experience</p>
         </div>
@@ -105,13 +116,13 @@ function App() {
       <div className="h-10" id="vehicle"></div>
 
       <div className="pt-14" >
-        <div className="flex flex-col items-center font-bold">
+        <div className="flex flex-col items-center font-bold" data-aos="fade-down" data-aos-duration="1500">
           <p className="text-4xl">Our</p>
           <p className="text-4xl text-[#A2C90C]">Electric Vehicle</p>
         </div>
 
         <div className="mt-3 flex justify-between px-20">
-          <div className="w-[46%] flex gap-x-3">
+          <div className="w-[46%] flex gap-x-3" data-aos="fade-right" data-aos-duration="1500">
             <img src="/assets/images/electric-scooter.png" alt="" className="w-[220px] h-[320px]" />
 
             <div className="h-[320px] flex flex-col justify-between">
@@ -124,9 +135,9 @@ function App() {
             </div>
           </div>
 
-          <div className="w-[1px] h-[340px] bg-black"></div>
+          <div className="w-[1px] h-[340px] bg-black" data-aos="flip-down" data-aos-duration="1000"></div>
 
-          <div className="w-[46%] flex gap-x-3">
+          <div className="w-[46%] flex gap-x-3" data-aos="fade-left" data-aos-duration="1500">
             <div className="h-[320px] flex flex-col items-end">
               <div className="flex flex-col items-end">
                 <h1 className="text-[#768EAA] text-3xl font-bold w-[120px] mb-3 text-end">Electric Bike</h1>
@@ -144,14 +155,16 @@ function App() {
           <div className="w-full h-[1px] bg-black"></div>
         </div>
 
-        <div className="flex justify-between items-center px-12 pt-20" id="services">
+        <div className="h-[64px]" id="services"></div>
+
+        <div className="flex justify-between items-center px-12 pt-20" >
           <div className="w-[40%] h-fit">
-            <h1 className="text-[46px] leading-tight text-[#A2C90C] font-bold">Experience Freedom with Roll-Ease.</h1>
-            <p className="text-xl mt-3 w-[86%]">Choose between our flexible Argo type for short trips charged per minute, or our convenient Duration type for longer journeys with pre-selected ride durations.</p>
+            <h1 className="text-[46px] leading-tight text-[#A2C90C] font-bold" data-aos="fade-down" data-aos-duration="1500">Experience Freedom with Roll-Ease.</h1>
+            <p className="text-xl mt-3 w-[86%]" data-aos="fade-right" data-aos-duration="1500">Choose between our flexible Argo type for short trips charged per minute, or our convenient Duration type for longer journeys with pre-selected ride durations.</p>
           </div>
 
           <div className="flex gap-x-16">
-            <div className="w-[300px] h-[350px] flex justify-end  relative">
+            <div className="w-[300px] h-[350px] flex justify-end  relative" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="500">
               <div className="bg-[#768EAA] w-[280px] h-[330px] text-white pt-5 text-center rounded-2xl">
                 <h1 className="text-xl font-bold px-12">Flexibility with Argo Type</h1>
                 <p className="px-4">Enjoy short trips with our Argo type, where you pay per minute. Only pay for the time you ride, giving you flexibility to hop on and off as needed.</p>
@@ -162,7 +175,7 @@ function App() {
               </div>
             </div>
 
-            <div className="w-[300px] h-[350px] flex justify-end  relative">
+            <div className="w-[300px] h-[350px] flex justify-end relative" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="800">
               <div className="bg-[#768EAA] w-[280px] h-[330px] text-white pt-5 text-center rounded-2xl">
                 <h1 className="text-xl font-bold px-12">Convenience with Duration Type</h1>
                 <p className="px-4">Choose our Duration option for longer rides. Select your preferred duration upfront, return hassle-free before time ends</p>
@@ -176,43 +189,57 @@ function App() {
         </div>
 
         <div className="pt-20 pb-14" id="review">
-          <div className="text-[#A2C90C] text-4xl text-center">
+          <div className="text-[#A2C90C] text-4xl text-center" data-aos="fade-down" data-aos-duration="1500">
             <h1 className="font-medium mb-1">Read Reviews,</h1>
             <h1 className="font-bold">Ride With Confidence.</h1>
           </div>
 
           <div className="flex gap-x-10 justify-center mt-10">
             {
-              review.map(e => (
-                <div className="flex flex-col">
-                  <div className="w-[320px] h-full bg-[#768EAA] p-6 rounded-t-2xl rounded-br-2xl">
-                    <p className="text-white text-lg">{e.message}</p>
+              review.map((e, i) => {
+                let starCount = [];
 
-                    <div className="mt-4 flex">
-                      {
-                        [1, 1, 1, 1, 1].map(_ => (
-                          <p className="text-[#A2C90C] text-3xl">&#9733;</p>
-                        ))
-                      }
+                for (let j = 0; j < e.rating; j++) {
+                  starCount.push(true);
+                }
+
+                for (let j = e.rating; j < 5; j++) {
+                  starCount.push(false);
+                }
+
+                return (
+                  <div key={i} className="flex flex-col" data-aos={`${i % 2 == 0 ? "flip-left" : "flip-right"}`} data-aos-duration="1500" data-aos-delay={`${i * 250}`}>
+                    <div className="w-[320px] h-full bg-[#768EAA] p-6 rounded-t-2xl rounded-br-2xl flex flex-col justify-between">
+                      <p className="text-white text-lg">{e.message}</p>
+
+                      <div className="mt-4 flex">
+                        {
+
+                          starCount.map((isFilled, i) => (
+                            <p key={i} className={`text-3xl ${isFilled ? 'text-[#A2C90C]' : 'text-white'}`}>&#9733;</p>
+                          ))
+                        }
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="flex">
-                    <div className="relative w-14 h-11">
-                      <div className="absolute top-0 left-0 w-0 h-0 border-l-[56px] border-b-transparent border-b-[48px] border-l-[#768EAA] rounded-bl-2xl"></div>
-                    </div>
+                    <div className="flex">
+                      <div className="relative w-14 h-11">
+                        <div className="absolute top-0 left-0 w-0 h-0 border-l-[56px] border-b-transparent border-b-[48px] border-l-[#768EAA] rounded-bl-2xl"></div>
+                      </div>
 
-                    <div className="flex items-center gap-x-3 mt-3">
-                      <img src={e.picture} alt="profile" width={64} />
+                      <div className="flex items-center gap-x-3 mt-3">
+                        <img src={e.picture} alt="profile" width={64} />
 
-                      <div>
-                        <h1 className="text-xl font-bold">{e.reviewerName}</h1>
-                        <p className="text-sm opacity-50 font-medium">{e.date}</p>
+                        <div>
+                          <h1 className="text-xl font-bold">{e.reviewerName}</h1>
+                          <p className="text-sm opacity-50 font-medium">{e.date}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))
+                )
+              }
+              )
             }
           </div>
         </div>
